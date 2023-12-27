@@ -9,13 +9,13 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
 
 class MessageSent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $user;
-
     public $message;
 
     /**
@@ -36,6 +36,7 @@ class MessageSent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
+        Log::debug("{$this->user}: {$this->message}");
         return new PresenceChannel('chat');
     }
 }

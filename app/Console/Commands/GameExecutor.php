@@ -44,14 +44,14 @@ class GameExecutor extends Command
         while (true) {
             broadcast(new RemainingTimeChanged($this->time . 's'));
 
-            $this->time--;
+            $this->time--;//counts down
             sleep(1);
 
-            if ($this->time === 0) {
+            if ($this->time === 0) {//counter counts to zero
                 $this->time = 'Waiting to start';
                 broadcast(new RemainingTimeChanged($this->time));
 
-                broadcast(new WinnerNumberGenerated(mt_rand(1, 12)));
+                broadcast(new WinnerNumberGenerated(random_int(1, 12)));
 
                 sleep(5);
                 $this->time = 15;

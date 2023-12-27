@@ -11,6 +11,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 class UserDeleted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets;
+    //no need to serialize for a model that has been deleted
 
     public $user;
 

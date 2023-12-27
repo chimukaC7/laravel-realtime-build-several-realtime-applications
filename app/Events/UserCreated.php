@@ -34,6 +34,6 @@ class UserCreated implements ShouldBroadcast
     {
         \Log::debug("Created {$this->user->name}");
 
-        return new Channel('users');
+        return new Channel('users');//a public channel called users
     }
 }

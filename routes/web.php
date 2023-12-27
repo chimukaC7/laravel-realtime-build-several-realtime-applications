@@ -19,10 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('/users', 'users.showAll')->name('users.all');
+Route::view('/users/index', 'users.showAll')->name('users.all');
 
-Route::view('/game', 'game.show')->name('game.show');
+Route::view('/game/show', 'game.show')->name('game.show');
 
-Route::get('/chat', 'ChatController@showChat')->name('chat.show');
+Route::get('/chat/show', 'ChatController@showChat')->name('chat.show');
 Route::post('/chat/message', 'ChatController@messageReceived')->name('chat.message');
 Route::post('/chat/greet/{user}', 'ChatController@greetReceived')->name('chat.greet');

@@ -16,7 +16,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('notifications', function ($user) {
-    return $user != null;
+    return $user != null;//user not authenticated
 });
 
 Broadcast::channel('chat', function ($user) {
