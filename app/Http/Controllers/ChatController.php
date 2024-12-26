@@ -44,8 +44,8 @@ class ChatController extends Controller
 
     public function greetReceived(Request $request, User $user)
     {
-        broadcast(new GreetingSent($user, "{$request->user()->name} greeted you"));
-        broadcast(new GreetingSent($request->user(), "You greeted {$user->name}"));
+        broadcast(new GreetingSent($user, "{$request->user()->name} greeted you"));//receiver
+        broadcast(new GreetingSent($request->user(), "You greeted {$user->name}"));//sender
 
         return "Greeting {$user->name} from {$request->user()->name}";
     }
