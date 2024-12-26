@@ -51,6 +51,7 @@ return [
 //                'host' => '127.0.0.1',
                 'host' => 'ws.supersecuredomain.com',
 //                'port' => 6001,
+//                'port' => 80,
                 'port' => 443,
                 'useTLS' => true,
                 'scheme' => 'https',

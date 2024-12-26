@@ -48,6 +48,7 @@ window.Echo = new Echo({
     // wsHost: '127.0.0.1',
     wsHost: 'ws.supersecuredomain.com',
     // wsPort: 6001,
+    // wsPort: 80,
     wsPort: 443,
     // encrypted: false,
     encrypted: true,
